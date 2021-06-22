@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      height: -webkit-fill-available;
+    }
+    .wrapper {
+      display: grid;
+      height: -webkit-fill-available;
+      grid-template-rows: 20% 60% 20%;
+      grid-template-columns: 100%;
+      grid-row-gap: 5px;
+    }
+
+    .wrapper > div {
+      border: 1px solid black;
+    }
+
+    .el_1 {
+      grid-row: 2/3;
+    }
+
+    .el_2 {
+      grid-row: 1/2;
+    }
+
+    .el_3 {
+      grid-row: 3/-1;
+    }   
+
+    @media screen and (min-width: 400px) {
+      .wrapper {
+        grid-template-rows: repeat(2, 50%);
+        grid-template-columns: 60% 40%;
+        grid-template-areas: "a b"
+          "a c";
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+      }
+
+      .el_1 {
+        grid-area: a;
+      }
+
+      .el_2 {
+        grid-area: b;
+      }
+
+      .el_3 {
+        grid-area: c;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="el_1">A</div>
+    <div class="el_2">B</div>
+    <div class="el_3">C</div>
+  </div>
+</body>
+
+</html>
